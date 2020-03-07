@@ -4,7 +4,7 @@
     <div class="container my-2">
       <div class="row">
         <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>
-        <Cart :datas="cart"></Cart>
+        <Cart @removeFromCart="removeItemFromCart" :datas="cart"></Cart>
       </div>
     </div>
   </div>
@@ -36,6 +36,9 @@ export default {
   methods:{
     addCartItem(item){
       this.cart.push(item)
+    },
+    removeItemFromCart(index){
+      this.cart.splice(index, 1)
     }
   }
 }
