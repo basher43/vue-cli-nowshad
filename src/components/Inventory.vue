@@ -1,13 +1,15 @@
 <template>
     <div class="col-md-9">
         <div class="row">
-            <div class="col-md-4">
+            <div v-for="(data, i) in datas" :key="i" class="col-md-4">
                 <div class="card">
-                    <img src="./../assets/img.png" class="card-img-top" alt="">
+                    <h2>{{data.title}}</h2>
+                    <img :src="data.image" class="card-img-top" alt="">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">{{data.description}}</p>
                     </div>
-                    <button class="btn btn-primary">Add</button>
+                    <strong>{{data.price}}</strong>
+                    <button @click="addToCart(data)" class="btn btn-primary">Add</button>
                 </div>
             </div>
         </div>
@@ -16,7 +18,12 @@
 
 <script>
     export default {
-        name: "Inventory"
+        methods:{
+            addToCart(item){
+                this.$emit("addNewItemToCart", item)
+            }
+        },
+        props: ['datas']
     }
 </script>
 

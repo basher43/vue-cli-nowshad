@@ -3,8 +3,8 @@
       <NavBar></NavBar>
     <div class="container my-2">
       <div class="row">
-        <Inventory></Inventory>
-        <Cart></Cart>
+        <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>
+        <Cart :datas="cart"></Cart>
       </div>
     </div>
   </div>
@@ -14,6 +14,7 @@
 import NavBar from "./components/NavBar";
 import Inventory from "./components/Inventory";
 import Cart from "./components/Cart";
+import data from './assets/data'
 
 export default {
   name: 'App',
@@ -22,7 +23,21 @@ export default {
       Inventory,
       Cart
   },
+  data(){
+    return{
+      products:[],
+      cart:[]
+    }
+  },
+  mounted() {
+    this.products = data
 
+  },
+  methods:{
+    addCartItem(item){
+      this.cart.push(item)
+    }
+  }
 }
 </script>
 
