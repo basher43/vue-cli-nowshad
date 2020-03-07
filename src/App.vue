@@ -1,6 +1,6 @@
 <template>
   <div id="">
-      <NavBar></NavBar>
+      <NavBar @search="search"></NavBar>
     <div class="container my-2">
       <div class="row">
         <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>
@@ -39,8 +39,14 @@ export default {
     },
     removeItemFromCart(index){
       this.cart.splice(index, 1)
+    },
+    search(keyword){
+      this.products = data.filter(item=>{
+        return item.title.toLocaleLowerCase().indexOf(keyword.toLocaleString()) !== -1
+      })
     }
   }
+
 }
 </script>
 
