@@ -1,28 +1,29 @@
 <template>
   <div id="">
       <NavBar @search="search"></NavBar>
-    <div class="container my-2">
-      <div class="row">
-        <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>
-        <Cart @removeFromCart="removeItemFromCart" :datas="cart"></Cart>
-        <router-view></router-view>
-      </div>
-    </div>
+<!--    <div class="container my-2">-->
+<!--      <div class="row">-->
+<!--        <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>-->
+<!--        <Cart @removeFromCart="removeItemFromCart" :datas="cart"></Cart>-->
+<!--        -->
+<!--      </div>-->
+<!--    </div>-->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar";
-import Inventory from "./components/Inventory";
-import Cart from "./components/Cart";
+// import Inventory from "./components/Inventory";
+// import Cart from "./components/Cart";
 import data from './assets/data'
 
 export default {
   name: 'App',
   components: {
       NavBar,
-      Inventory,
-      Cart
+      // Inventory,
+      // Cart
   },
   data(){
     return{
