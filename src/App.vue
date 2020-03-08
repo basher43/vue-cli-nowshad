@@ -3,7 +3,7 @@
       <NavBar @search="search"></NavBar>
 <!--    <div class="container my-2">-->
 <!--      <div class="row">-->
-<!--        <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>-->
+        <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>
 <!--        <Cart @removeFromCart="removeItemFromCart" :datas="cart"></Cart>-->
 <!--        -->
 <!--      </div>-->
@@ -14,7 +14,7 @@
 
 <script>
 import NavBar from "./components/NavBar";
-// import Inventory from "./components/Inventory";
+import Inventory from "./components/Inventory";
 // import Cart from "./components/Cart";
 import data from './assets/data'
 
@@ -22,7 +22,7 @@ export default {
   name: 'App',
   components: {
       NavBar,
-      // Inventory,
+      Inventory,
       // Cart
   },
   data(){

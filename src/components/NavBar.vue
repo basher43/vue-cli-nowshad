@@ -12,6 +12,21 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
+        <div class="collapse navbar-collapse">
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <router-link exact class="text-info" to="/">Home</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="text-warning" to="hello/1">Hello</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="text-danger" to="/test/2">Test</router-link>
+                </li>
+            </ul>
+
+        </div>
     </nav>
 </template>
 
