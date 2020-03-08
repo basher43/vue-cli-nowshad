@@ -5,6 +5,7 @@
       <div class="row">
         <Inventory @addNewItemToCart="addCartItem" :datas="products"></Inventory>
         <Cart @removeFromCart="removeItemFromCart" :datas="cart"></Cart>
+        <router-view></router-view>
       </div>
     </div>
   </div>
